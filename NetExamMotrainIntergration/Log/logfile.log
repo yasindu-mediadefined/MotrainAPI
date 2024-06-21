@@ -1,0 +1,21 @@
+2024-06-20 19:29:48,045 - GetMotrainCourses --
+2024-06-20 19:30:30,242 - CheckExisitingUserSystem.Net.WebException: The remote server returned an error: (400) Bad Request.
+   at System.Net.HttpWebRequest.GetResponse()
+   at NetExamMotrainIntergration.CreatePlayer.CreateMotrainPlayer(String teamID, String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\CreatePlayer.cs:line 57
+2024-06-20 19:30:35,696 - Json Response Error:{"code":"VALIDATION_FAILED","message":"must NOT have more than 2 characters"}
+2024-06-20 19:30:48,712 - CheckExisitingUserSystem.Net.WebException: The remote server returned an error: (400) Bad Request.
+   at System.Net.HttpWebRequest.GetResponse()
+   at NetExamMotrainIntergration.CreatePlayer.CreateMotrainPlayer(String teamID, String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\CreatePlayer.cs:line 57
+2024-06-20 19:30:48,720 - Json Response Error:{"code":"VALIDATION_FAILED","message":"must NOT have more than 2 characters"}
+2024-06-20 19:30:55,489 - CheckExisitingUserSystem.Net.WebException: The remote server returned an error: (400) Bad Request.
+   at System.Net.HttpWebRequest.GetResponse()
+   at NetExamMotrainIntergration.CreatePlayer.CreateMotrainPlayer(String teamID, String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\CreatePlayer.cs:line 57
+2024-06-20 19:30:55,502 - Json Response Error:{"code":"VALIDATION_FAILED","message":"must NOT have more than 2 characters"}
+2024-06-20 19:31:02,174 - CheckExisitingUserSystem.Net.WebException: The remote server returned an error: (400) Bad Request.
+   at System.Net.HttpWebRequest.GetResponse()
+   at NetExamMotrainIntergration.CreatePlayer.CreateMotrainPlayer(String teamID, String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\CreatePlayer.cs:line 57
+2024-06-20 19:31:02,190 - Json Response Error:{"code":"VALIDATION_FAILED","message":"must NOT have more than 2 characters"}
+2024-06-20 19:31:09,366 - CheckExisitingUserSystem.Net.WebException: The remote server returned an error: (400) Bad Request.
+   at System.Net.HttpWebRequest.GetResponse()
+   at NetExamMotrainIntergration.CreatePlayer.CreateMotrainPlayer(String teamID, String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\CreatePlayer.cs:line 57
+2024-06-20 19:31:09,406 - Json Response Error:{"code":"VALIDATION_FAILED","message":"must NOT have more than 2 characters"}
