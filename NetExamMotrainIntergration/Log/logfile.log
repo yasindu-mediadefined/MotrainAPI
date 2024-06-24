@@ -1,21 +1,58 @@
-2024-06-20 19:29:48,045 - GetMotrainCourses --
-2024-06-20 19:30:30,242 - CheckExisitingUserSystem.Net.WebException: The remote server returned an error: (400) Bad Request.
+2024-06-24 09:38:25,512 - GetMotrainCourses --
+2024-06-24 09:38:54,434 - System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.GetMotrainCourses() in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\NetExamMortrainIntegration.cs:line 76
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2024-06-24 09:39:49,990 - GetMotrainCourses --
+2024-06-24 09:43:11,847 - CheckExisitingUser{"code":"UNCLASSIFIED_ERROR","message":"Unexpected token f in JSON at position 2"}
+2024-06-24 09:43:11,878 - CreateMotrainUserSystem.Net.WebException: The remote server returned an error: (500) Internal Server Error.
    at System.Net.HttpWebRequest.GetResponse()
-   at NetExamMotrainIntergration.CreatePlayer.CreateMotrainPlayer(String teamID, String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\CreatePlayer.cs:line 57
-2024-06-20 19:30:35,696 - Json Response Error:{"code":"VALIDATION_FAILED","message":"must NOT have more than 2 characters"}
-2024-06-20 19:30:48,712 - CheckExisitingUserSystem.Net.WebException: The remote server returned an error: (400) Bad Request.
+   at NetExamMotrainIntergration.CreatePlayer.CreateMotrainPlayer(String teamID, String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\CreatePlayer.cs:line 133
+2024-06-24 09:43:14,113 - System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.HttpWebResponse'.
+   at System.Net.HttpWebResponse.CheckDisposed()
+   at System.Net.HttpWebResponse.GetResponseStream()
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.ProcessMotrainAPI(String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\NetExamMortrainIntegration.cs:line 198
+2024-06-24 09:43:16,031 - System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.HttpWebResponse'.
+   at System.Net.HttpWebResponse.CheckDisposed()
+   at System.Net.HttpWebResponse.GetResponseStream()
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.ProcessMotrainAPI(String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\NetExamMortrainIntegration.cs:line 213
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.GetMotrainCourses() in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\NetExamMortrainIntegration.cs:line 103
+2024-06-24 09:43:27,643 - GetMotrainCourses --
+2024-06-24 09:44:24,655 - CheckExisitingUser{"code":"VALIDATION_FAILED","message":"must have required property 'firstname'"}
+2024-06-24 09:44:24,686 - CreateMotrainUserSystem.Net.WebException: The remote server returned an error: (400) Bad Request.
    at System.Net.HttpWebRequest.GetResponse()
-   at NetExamMotrainIntergration.CreatePlayer.CreateMotrainPlayer(String teamID, String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\CreatePlayer.cs:line 57
-2024-06-20 19:30:48,720 - Json Response Error:{"code":"VALIDATION_FAILED","message":"must NOT have more than 2 characters"}
-2024-06-20 19:30:55,489 - CheckExisitingUserSystem.Net.WebException: The remote server returned an error: (400) Bad Request.
+   at NetExamMotrainIntergration.CreatePlayer.CreateMotrainPlayer(String teamID, String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country)
+2024-06-24 09:44:30,716 - GetMotrainCourses --
+2024-06-24 09:49:49,150 - Json Response:[
+  {
+    "id": "519d184e-4c34-4c4a-b520-31d1057ff215",
+    "account_id": "580b06e3-fe64-435a-a207-3cc58fa6791c",
+    "name": "Default team",
+    "tickets_enabled": false
+  }
+]
+2024-06-24 10:00:45,166 - GetMotrainCourses --
+2024-06-24 11:01:19,430 - GetMotrainCourses --
+2024-06-24 11:09:23,817 - System.NullReferenceException: Object reference not set to an instance of an object.
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.ProcessMotrainAPI(String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country)
+2024-06-24 11:10:39,697 - GetMotrainCourses --
+2024-06-24 11:12:02,926 - AwardCoinstoMotrainPlayer{"code":"UNCLASSIFIED_ERROR","message":"Unexpected token \" in JSON at position 0"}
+2024-06-24 11:12:03,004 - AwardCoinstoMotrainPlayerSystem.Net.WebException: The remote server returned an error: (500) Internal Server Error.
    at System.Net.HttpWebRequest.GetResponse()
-   at NetExamMotrainIntergration.CreatePlayer.CreateMotrainPlayer(String teamID, String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\CreatePlayer.cs:line 57
-2024-06-20 19:30:55,502 - Json Response Error:{"code":"VALIDATION_FAILED","message":"must NOT have more than 2 characters"}
-2024-06-20 19:31:02,174 - CheckExisitingUserSystem.Net.WebException: The remote server returned an error: (400) Bad Request.
-   at System.Net.HttpWebRequest.GetResponse()
-   at NetExamMotrainIntergration.CreatePlayer.CreateMotrainPlayer(String teamID, String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\CreatePlayer.cs:line 57
-2024-06-20 19:31:02,190 - Json Response Error:{"code":"VALIDATION_FAILED","message":"must NOT have more than 2 characters"}
-2024-06-20 19:31:09,366 - CheckExisitingUserSystem.Net.WebException: The remote server returned an error: (400) Bad Request.
-   at System.Net.HttpWebRequest.GetResponse()
-   at NetExamMotrainIntergration.CreatePlayer.CreateMotrainPlayer(String teamID, String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\CreatePlayer.cs:line 57
-2024-06-20 19:31:09,406 - Json Response Error:{"code":"VALIDATION_FAILED","message":"must NOT have more than 2 characters"}
+   at NetExamMotrainIntergration.AwardCoins.AwardCoinstoMotrainPlayer(String motrainUserID, Int32 motrainCoins) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\AwardCoins.cs:line 74
+2024-06-24 11:14:21,425 - GetMotrainCourses --

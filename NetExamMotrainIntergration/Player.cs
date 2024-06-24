@@ -20,5 +20,7 @@ namespace NetExamMotrainIntergration
         public string state { get; set; }
         public string country { get; set; }
 
+        public int coins { get; set; }
+
     }
 }

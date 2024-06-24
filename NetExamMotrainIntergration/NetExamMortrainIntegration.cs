@@ -22,13 +22,15 @@ namespace NetExamMotrainIntergration
         private static string LogFilePath = ConfigurationSettings.AppSettings["LogFileFolder"];
         public static string LOGFILENAME = "";
         private static StreamWriter sw;
-        //  static bool errorEncountered = false;
+
+        //API endpoint URL
+        private static string motrainAPIEndPoint = ConfigurationSettings.AppSettings["MotrainAPIEndPoint"];
         //Motrain API Key
-        public static string motrainAPIKey ="Vq4mhejWyqwcPZ0d5hnEbSze7UOFoYvo7bUPcVRN4aRgMDrpFF8MomiFhurqB6PZ";
+        public static string motrainAPIKey = ConfigurationSettings.AppSettings["MotrainAPIKey"];
         //Motrain account ID
-        private static string motrainAPIAccountID = "580b06e3-fe64-435a-a207-3cc58fa6791c";
-        // The base address of the API endpoint
-        private static string motrianRequestTeamAPIUrl = $"https://api.motrainapp.com/v2/accounts/{motrainAPIAccountID}/teams";
+        private static string motrainAPIAccountID = ConfigurationSettings.AppSettings["MotrainAPIAccountID"];
+
+        private static string motrianRequestTeamAPIUrl = $"{motrainAPIEndPoint}/accounts/{motrainAPIAccountID}/teams";
         private static string teamID =string.Empty;
         private static string accountID = string.Empty;
         private static string teamName = string.Empty;
@@ -37,7 +39,14 @@ namespace NetExamMotrainIntergration
         private static string jsonString = string.Empty;
         private static CheckPlayer checkPlayer = new CheckPlayer();
         private static CreatePlayer createPlayer = new CreatePlayer();
+        private static AwardCoins awardCoins = new AwardCoins();
+        private static int mortrainPlayerCoins;
+        private static string mortrainPlayerUserID;
 
+
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
         [STAThread]
         static void Main(string[] args)
         {
@@ -126,7 +135,9 @@ namespace NetExamMotrainIntergration
                 httpTeamWebRequest.Method = "GET";
                 var motrainTeamAPIresult = string.Empty;
                 var existingPlayer = string.Empty;
-                var createdPlayerDtails =string.Empty;
+                var createdPlayerDtails ="";
+                var awardCoinstoMotrainPlayer = "";
+                //string createdPlayerDtails = new JObject();
                 httpTeamWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Bearer " + motrainAPIKey);
                 try
                 {
@@ -139,11 +150,6 @@ namespace NetExamMotrainIntergration
                             {
                                 //API response
                                 motrainTeamAPIresult = readerData.ReadToEnd();
-                                // Check and print the type of each JSON response
-
-                                //JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
-                                //var dict = (IDictionary<string, object>)jsonSerializer.DeserializeObject(motrainAPIresult);
-
                                 // JSON array string into a JArray object.
                                 JArray teamArray = JArray.Parse(motrainTeamAPIresult);
                                 //creates an empty JSON object
@@ -153,7 +159,6 @@ namespace NetExamMotrainIntergration
                                 {
                                     teamID = item["id"].ToString();
                                     //calling seperate web method to get exisiting users
-                                    //CheckPlayer.cs
                                     existingPlayer = checkPlayer.CheckExistingPlayer(teamID,email);
                                     // Deserialize using Newtonsoft.Json
                                     List<Player> existingPlayerList = JsonConvert.DeserializeObject<List<Player>>(existingPlayer);
@@ -162,10 +167,22 @@ namespace NetExamMotrainIntergration
                                         //calling seperate web method to post new users
                                         createdPlayerDtails = createPlayer.CreateMotrainPlayer(teamID, userID, iCSID, motrainStatus, coins, email, firstName, lastName
                                             , adderss1, adderss2, city, state, country);
+                                       
+                                        // Convert JSON string to JObject
+                                        JObject jsonObjectCreatePlayer = JsonConvert.DeserializeObject<JObject>(createdPlayerDtails);
+
+                                        // Accessing values
+                                        
+                                        mortrainPlayerUserID = jsonObjectCreatePlayer["id"].ToString();
+                                        mortrainPlayerCoins = (int)jsonObjectCreatePlayer["coins"];
+                                        awardCoinstoMotrainPlayer = awardCoins.AwardCoinstoMotrainPlayer(mortrainPlayerUserID, mortrainPlayerCoins);
                                     }
                                     else
                                     {
-                                        Console.WriteLine("The JSON array is not empty (Newtonsoft.Json).");
+                                        JObject jsonObjectExistingPlayer = JsonConvert.DeserializeObject<JObject>(existingPlayer);
+                                        mortrainPlayerCoins = (int)jsonObject["coins"];
+                                        mortrainPlayerUserID = jsonObject["id"].ToString();
+                                       
                                         
                                     }
                                     jsonObject[teamID] = item;

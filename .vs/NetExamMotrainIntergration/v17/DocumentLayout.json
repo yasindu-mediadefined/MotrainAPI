@@ -3,19 +3,23 @@
   "WorkspaceRootPath": "D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3F9BB217-4893-4FB3-9AA2-F87F2046B852}|NetExamMotrainIntergration\\NetExamMotrainIntergration.csproj|D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\netexammotrainintergration\\netexammortrainintegration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F9BB217-4893-4FB3-9AA2-F87F2046B852}|NetExamMotrainIntergration\\NetExamMotrainIntergration.csproj|solutionrelative:netexammotrainintergration\\netexammortrainintegration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F9BB217-4893-4FB3-9AA2-F87F2046B852}|NetExamMotrainIntergration\\NetExamMotrainIntergration.csproj|d:\\md-yasindu\\netexamv6projects\\local\\netexam apis\\netexammotrainintergration\\netexammotrainintergration\\awardcoins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F9BB217-4893-4FB3-9AA2-F87F2046B852}|NetExamMotrainIntergration\\NetExamMotrainIntergration.csproj|solutionrelative:netexammotrainintergration\\awardcoins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F9BB217-4893-4FB3-9AA2-F87F2046B852}|NetExamMotrainIntergration\\NetExamMotrainIntergration.csproj|D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\netexammotrainintergration\\checkplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F9BB217-4893-4FB3-9AA2-F87F2046B852}|NetExamMotrainIntergration\\NetExamMotrainIntergration.csproj|solutionrelative:netexammotrainintergration\\checkplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F9BB217-4893-4FB3-9AA2-F87F2046B852}|NetExamMotrainIntergration\\NetExamMotrainIntergration.csproj|D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\netexammotrainintergration\\netexammortrainintegration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F9BB217-4893-4FB3-9AA2-F87F2046B852}|NetExamMotrainIntergration\\NetExamMotrainIntergration.csproj|solutionrelative:netexammotrainintergration\\netexammortrainintegration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3F9BB217-4893-4FB3-9AA2-F87F2046B852}|NetExamMotrainIntergration\\NetExamMotrainIntergration.csproj|d:\\md-yasindu\\netexamv6projects\\local\\netexam apis\\netexammotrainintergration\\netexammotrainintergration\\createplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3F9BB217-4893-4FB3-9AA2-F87F2046B852}|NetExamMotrainIntergration\\NetExamMotrainIntergration.csproj|solutionrelative:netexammotrainintergration\\createplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F9BB217-4893-4FB3-9AA2-F87F2046B852}|NetExamMotrainIntergration\\NetExamMotrainIntergration.csproj|d:\\md-yasindu\\netexamv6projects\\local\\netexam apis\\netexammotrainintergration\\netexammotrainintergration\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3F9BB217-4893-4FB3-9AA2-F87F2046B852}|NetExamMotrainIntergration\\NetExamMotrainIntergration.csproj|D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\netexammotrainintergration\\checkplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F9BB217-4893-4FB3-9AA2-F87F2046B852}|NetExamMotrainIntergration\\NetExamMotrainIntergration.csproj|solutionrelative:netexammotrainintergration\\checkplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F9BB217-4893-4FB3-9AA2-F87F2046B852}|NetExamMotrainIntergration\\NetExamMotrainIntergration.csproj|D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\netexammotrainintergration\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3F9BB217-4893-4FB3-9AA2-F87F2046B852}|NetExamMotrainIntergration\\NetExamMotrainIntergration.csproj|solutionrelative:netexammotrainintergration\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -23,12 +27,12 @@
       "RelativeMoniker": "D:0:0:{3F9BB217-4893-4FB3-9AA2-F87F2046B852}|NetExamMotrainIntergration\\NetExamMotrainIntergration.csproj|solutionrelative:netexammotrainintergration\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F9BB217-4893-4FB3-9AA2-F87F2046B852}|NetExamMotrainIntergration\\NetExamMotrainIntergration.csproj|D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\netexammotrainintergration\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F9BB217-4893-4FB3-9AA2-F87F2046B852}|NetExamMotrainIntergration\\NetExamMotrainIntergration.csproj|solutionrelative:netexammotrainintergration\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3F9BB217-4893-4FB3-9AA2-F87F2046B852}|NetExamMotrainIntergration\\NetExamMotrainIntergration.csproj|D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\netexammotrainintergration\\team.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3F9BB217-4893-4FB3-9AA2-F87F2046B852}|NetExamMotrainIntergration\\NetExamMotrainIntergration.csproj|solutionrelative:netexammotrainintergration\\team.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F9BB217-4893-4FB3-9AA2-F87F2046B852}|NetExamMotrainIntergration\\NetExamMotrainIntergration.csproj|D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\netexammotrainintergration\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F9BB217-4893-4FB3-9AA2-F87F2046B852}|NetExamMotrainIntergration\\NetExamMotrainIntergration.csproj|solutionrelative:netexammotrainintergration\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,7 +50,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "AwardCoins.cs",
+              "DocumentMoniker": "D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\NetExamMotrainIntergration\\AwardCoins.cs",
+              "RelativeDocumentMoniker": "NetExamMotrainIntergration\\AwardCoins.cs",
+              "ToolTip": "D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\NetExamMotrainIntergration\\AwardCoins.cs*",
+              "RelativeToolTip": "NetExamMotrainIntergration\\AwardCoins.cs*",
+              "ViewState": "AQIAABwAAAAAAAAAAAAQwC0AAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T04:40:35.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Team.cs",
+              "DocumentMoniker": "D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\NetExamMotrainIntergration\\Team.cs",
+              "RelativeDocumentMoniker": "NetExamMotrainIntergration\\Team.cs",
+              "ToolTip": "D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\NetExamMotrainIntergration\\Team.cs",
+              "RelativeToolTip": "NetExamMotrainIntergration\\Team.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T04:59:18.014Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Logger.cs",
               "DocumentMoniker": "D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\NetExamMotrainIntergration\\Logger.cs",
               "RelativeDocumentMoniker": "NetExamMotrainIntergration\\Logger.cs",
@@ -65,70 +94,58 @@
               "RelativeDocumentMoniker": "NetExamMotrainIntergration\\CreatePlayer.cs",
               "ToolTip": "D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\NetExamMotrainIntergration\\CreatePlayer.cs",
               "RelativeToolTip": "NetExamMotrainIntergration\\CreatePlayer.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAwwA8AAAAIAAAA",
+              "ViewState": "AQIAAHoAAAAAAAAAAAArwIgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-20T08:47:06.444Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "CheckPlayer.cs",
               "DocumentMoniker": "D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\NetExamMotrainIntergration\\CheckPlayer.cs",
               "RelativeDocumentMoniker": "NetExamMotrainIntergration\\CheckPlayer.cs",
               "ToolTip": "D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\NetExamMotrainIntergration\\CheckPlayer.cs",
               "RelativeToolTip": "NetExamMotrainIntergration\\CheckPlayer.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAiwC4AAAAJAAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAArwDIAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-20T08:38:50.683Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Player.cs",
               "DocumentMoniker": "D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\NetExamMotrainIntergration\\Player.cs",
               "RelativeDocumentMoniker": "NetExamMotrainIntergration\\Player.cs",
               "ToolTip": "D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\NetExamMotrainIntergration\\Player.cs",
               "RelativeToolTip": "NetExamMotrainIntergration\\Player.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAxwBYAAAAEAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABYAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-20T07:19:09.502Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Team.cs",
-              "DocumentMoniker": "D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\NetExamMotrainIntergration\\Team.cs",
-              "RelativeDocumentMoniker": "NetExamMotrainIntergration\\Team.cs",
-              "ToolTip": "D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\NetExamMotrainIntergration\\Team.cs",
-              "RelativeToolTip": "NetExamMotrainIntergration\\Team.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T11:01:00.636Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "App.config",
               "DocumentMoniker": "D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\NetExamMotrainIntergration\\App.config",
               "RelativeDocumentMoniker": "NetExamMotrainIntergration\\App.config",
               "ToolTip": "D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\NetExamMotrainIntergration\\App.config",
               "RelativeToolTip": "NetExamMotrainIntergration\\App.config",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAZAAAA",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAAAkAAABKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
               "WhenOpened": "2024-06-07T05:39:27.711Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "NetExamMortrainIntegration.cs",
               "DocumentMoniker": "D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\NetExamMotrainIntergration\\NetExamMortrainIntegration.cs",
               "RelativeDocumentMoniker": "NetExamMotrainIntergration\\NetExamMortrainIntegration.cs",
               "ToolTip": "D:\\MD-Yasindu\\NetExamV6Projects\\Local\\NetExam APIs\\NetExamMotrainIntergration\\NetExamMotrainIntergration\\NetExamMortrainIntegration.cs",
               "RelativeToolTip": "NetExamMotrainIntergration\\NetExamMortrainIntegration.cs",
-              "ViewState": "AQIAAMUAAAAAAAAAAAAqwN8AAAAAAAAA",
+              "ViewState": "AQIAAMoAAAAAAAAAAAArwNsAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-05T04:12:54.047Z",
               "EditorCaption": ""

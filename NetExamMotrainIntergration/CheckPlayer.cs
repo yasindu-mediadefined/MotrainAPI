@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -10,9 +11,12 @@ namespace NetExamMotrainIntergration
 {
     public class CheckPlayer
     {
+        //API endpoint URL
+        private static string motrainAPIEndPoint = ConfigurationSettings.AppSettings["MotrainAPIEndPoint"];
         public string CheckExistingPlayer(string teamID, string email)
         {
-            string requestChkeckingPlayerAPIUrl = $"https://api.motrainapp.com/v2/teams/{teamID}/users?email={email}";
+            
+            string requestChkeckingPlayerAPIUrl = $"{motrainAPIEndPoint}/teams/{teamID}/users?email={email}";
             var httpWebRequest = (HttpWebRequest)WebRequest.Create(requestChkeckingPlayerAPIUrl);
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "GET";
