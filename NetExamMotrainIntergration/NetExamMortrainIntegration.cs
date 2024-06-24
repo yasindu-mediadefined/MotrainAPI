@@ -72,7 +72,7 @@ namespace NetExamMotrainIntergration
                 int MotrainStatus;
                 int coursePoins;
                 string firstName = string.Empty, lastName = string.Empty, email =string.Empty;
-                string address1 = string.Empty, address2 = string.Empty, city = string.Empty, state = string.Empty, country=string.Empty;
+                string address1 = string.Empty, address2 = string.Empty, city = string.Empty, state = string.Empty, country=string.Empty, courseName=string.Empty;
                 using (SqlConnection conn = new SqlConnection(connectionString)) 
                 {
                     NetExamMotrainFileGeneration.Logger.Debug("GetMotrainCourses -- Begin");
@@ -100,11 +100,12 @@ namespace NetExamMotrainIntergration
                                 city = dreader["city"].ToString();
                                 state = dreader["state"].ToString();
                                 country = dreader["country"].ToString();
+                                courseName = dreader["nvName"].ToString();
 
                                 if (MotrainStatus == 0)
                                 {
                                     //process the motrain API from here
-                                    ProcessMotrainAPI(UserID,iCSID,MotrainStatus, coursePoins, email,firstName,lastName
+                                    ProcessMotrainAPI(UserID,iCSID,courseName,MotrainStatus, coursePoins, email,firstName,lastName
                                         , address1, address2, city,state,country);
                                 }
                             }
@@ -140,7 +141,7 @@ namespace NetExamMotrainIntergration
         /// <param name="city"></param>
         /// <param name="state"></param>
         /// <param name="country"></param>
-        private static void ProcessMotrainAPI(string userID, int iCSID, int motrainStatus, int coursePoints, string email, string firstName, string lastName
+        private static void ProcessMotrainAPI(string userID, int iCSID,string courseName, int motrainStatus, int coursePoints, string email, string firstName, string lastName
                                         , string adderss1, string adderss2, string city, string state, string country)
         {
             
@@ -180,8 +181,6 @@ namespace NetExamMotrainIntergration
                                     // Parse the JSON string array to json array
                                     JArray jsonExistingPlayerArray = JArray.Parse(existingPlayer);
                                     
-                                    
-                                    
                                     if (jsonExistingPlayerArray.Count == 0)
                                     {
                                         //Create New Motrain Player
@@ -192,7 +191,7 @@ namespace NetExamMotrainIntergration
                                         JObject jsonObjectCreatePlayer = JsonConvert.DeserializeObject<JObject>(createdPlayerDtails);
                                         motrainPlayerUserID = jsonObjectCreatePlayer["id"].ToString();
                                         //Awards coins to Motrain Newly Player
-                                        awardCoinstoMotrainPlayer = awardCoins.AwardCoinstoMotrainPlayer(motrainPlayerUserID, coursePoints);
+                                        awardCoinstoMotrainPlayer = awardCoins.AwardCoinstoMotrainPlayer(motrainPlayerUserID, coursePoints, courseName);
                                         if (awardCoinstoMotrainPlayer.Length > 0)
                                         {
                                             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -228,7 +227,7 @@ namespace NetExamMotrainIntergration
 
                                             motrainPlayerUserID = existingPlayerObject["id"].ToString();
                                             //Awards coins to Motrain Newly Player
-                                            awardCoinstoMotrainPlayer = awardCoins.AwardCoinstoMotrainPlayer(motrainPlayerUserID, coursePoints);
+                                            awardCoinstoMotrainPlayer = awardCoins.AwardCoinstoMotrainPlayer(motrainPlayerUserID, coursePoints, courseName);
                                             if (awardCoinstoMotrainPlayer.Length > 0)
                                             {
                                                 using (SqlConnection conn = new SqlConnection(connectionString))

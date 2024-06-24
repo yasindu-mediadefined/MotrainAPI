@@ -23,7 +23,7 @@ namespace NetExamMotrainIntergration
         /// <param name="motrainUserID"></param>
         /// <param name="motrainCoins"></param>
         /// <returns>awardCoins</returns>
-        public string AwardCoinstoMotrainPlayer( string motrainUserID, int motrainCoins)
+        public string AwardCoinstoMotrainPlayer( string motrainUserID, int motrainCoins, string courseName)
         {
 
             try
@@ -33,7 +33,7 @@ namespace NetExamMotrainIntergration
                 string jsonRequestBody = "{\"coins\":" + motrainCoins + "," +
                                             "\"reason\":{"+
                                                          "\"string\":\"transaction:credit.coursexcompleted\"," +
-                                                         "\"args\":{\"name\":\"netexam course coins awards to motrain\"}}}";
+                                                         "\"args\":{\"name\":\""+ courseName +"\"}}}";
 
                 //string jsonPayload = JsonConvert.SerializeObject(jsonRequestBody);
 
