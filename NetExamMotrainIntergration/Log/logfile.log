@@ -130,3 +130,116 @@ Object name: 'System.Net.HttpWebResponse'.
   }
 ]
 2024-06-24 13:01:18,372 - GetMotrainCourses --
+2024-06-24 15:19:27,224 - GetMotrainCourses --
+2024-06-24 16:20:50,468 - GetMotrainCourses --
+2024-06-24 16:33:40,121 - Json Response:[
+  {
+    "id": "519d184e-4c34-4c4a-b520-31d1057ff215",
+    "account_id": "580b06e3-fe64-435a-a207-3cc58fa6791c",
+    "name": "Default team",
+    "tickets_enabled": false
+  }
+]
+2024-06-24 16:33:55,325 - Newtonsoft.Json.JsonSerializationException: Deserialized JSON type 'Newtonsoft.Json.Linq.JArray' is not compatible with expected type 'Newtonsoft.Json.Linq.JObject'. Path '', line 1, position 557.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateJToken(JsonReader reader, JsonContract contract)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.ProcessMotrainAPI(String userID, Int32 iCSID, Int32 motrainStatus, Int32 coursePoins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\NetExamMortrainIntegration.cs:line 209
+2024-06-24 16:33:55,341 - Newtonsoft.Json.JsonSerializationException: Deserialized JSON type 'Newtonsoft.Json.Linq.JArray' is not compatible with expected type 'Newtonsoft.Json.Linq.JObject'. Path '', line 1, position 557.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateJToken(JsonReader reader, JsonContract contract)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.ProcessMotrainAPI(String userID, Int32 iCSID, Int32 motrainStatus, Int32 coursePoins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\NetExamMortrainIntegration.cs:line 273
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.GetMotrainCourses() in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\NetExamMortrainIntegration.cs:line 108
+2024-06-24 16:34:15,296 - GetMotrainCourses --
+2024-06-24 16:42:10,226 - GetMotrainCourses --
+2024-06-24 16:45:02,721 - GetMotrainCourses --
+2024-06-24 16:45:20,667 - Newtonsoft.Json.JsonSerializationException: Deserialized JSON type 'Newtonsoft.Json.Linq.JArray' is not compatible with expected type 'Newtonsoft.Json.Linq.JObject'. Path '', line 1, position 557.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateJToken(JsonReader reader, JsonContract contract)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.ProcessMotrainAPI(String userID, Int32 iCSID, Int32 motrainStatus, Int32 coursePoins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\NetExamMortrainIntegration.cs:line 210
+2024-06-24 16:45:20,682 - Newtonsoft.Json.JsonSerializationException: Deserialized JSON type 'Newtonsoft.Json.Linq.JArray' is not compatible with expected type 'Newtonsoft.Json.Linq.JObject'. Path '', line 1, position 557.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateJToken(JsonReader reader, JsonContract contract)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.ProcessMotrainAPI(String userID, Int32 iCSID, Int32 motrainStatus, Int32 coursePoins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\NetExamMortrainIntegration.cs:line 275
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.GetMotrainCourses() in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\NetExamMortrainIntegration.cs:line 108
+2024-06-24 16:45:30,332 - GetMotrainCourses --
+2024-06-24 16:45:49,106 - Newtonsoft.Json.JsonSerializationException: Deserialized JSON type 'Newtonsoft.Json.Linq.JArray' is not compatible with expected type 'Newtonsoft.Json.Linq.JObject'. Path '', line 1, position 557.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateJToken(JsonReader reader, JsonContract contract)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.ProcessMotrainAPI(String userID, Int32 iCSID, Int32 motrainStatus, Int32 coursePoins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\NetExamMortrainIntegration.cs:line 210
+2024-06-24 16:45:49,106 - Newtonsoft.Json.JsonSerializationException: Deserialized JSON type 'Newtonsoft.Json.Linq.JArray' is not compatible with expected type 'Newtonsoft.Json.Linq.JObject'. Path '', line 1, position 557.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateJToken(JsonReader reader, JsonContract contract)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.ProcessMotrainAPI(String userID, Int32 iCSID, Int32 motrainStatus, Int32 coursePoins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\NetExamMortrainIntegration.cs:line 275
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.GetMotrainCourses() in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\NetExamMortrainIntegration.cs:line 108
+2024-06-24 16:47:52,202 - GetMotrainCourses --
+2024-06-24 16:58:49,085 - GetMotrainCourses --
+2024-06-24 17:05:09,310 - GetMotrainCourses --
+2024-06-24 18:35:13,868 - GetMotrainCourses --
+2024-06-24 18:35:31,437 - System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The user name or password is incorrect
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.GetMotrainCourses() in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\NetExamMortrainIntegration.cs:line 81
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:1326,State:0,Class:20
+2024-06-24 18:39:02,401 - GetMotrainCourses --
+2024-06-24 18:53:35,495 - GetMotrainCourses --
+2024-06-24 19:01:28,596 - GetMotrainCourses --
+2024-06-24 19:03:15,119 - Json Response:[
+  {
+    "id": "519d184e-4c34-4c4a-b520-31d1057ff215",
+    "account_id": "580b06e3-fe64-435a-a207-3cc58fa6791c",
+    "name": "Default team",
+    "tickets_enabled": false
+  }
+]
+2024-06-24 19:08:18,135 - GetMotrainCourses --
+2024-06-24 19:11:27,548 - GetMotrainCourses --
+2024-06-24 19:13:52,174 - Json Response:[
+  {
+    "id": "519d184e-4c34-4c4a-b520-31d1057ff215",
+    "account_id": "580b06e3-fe64-435a-a207-3cc58fa6791c",
+    "name": "Default team",
+    "tickets_enabled": false
+  }
+]

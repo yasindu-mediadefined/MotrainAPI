@@ -1,0 +1,45 @@
+2024-06-21 20:29:40,750 - GetMotrainCourses --
+2024-06-21 20:30:09,683 - System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.GetMotrainCourses() in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\NetExamMortrainIntegration.cs:line 71
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2024-06-21 20:31:45,295 - GetMotrainCourses --
+2024-06-21 20:35:54,400 - CheckExisitingUserSystem.Net.WebException: The remote server returned an error: (400) Bad Request.
+   at System.Net.HttpWebRequest.GetResponse()
+   at NetExamMotrainIntergration.CreatePlayer.CreateMotrainPlayer(String teamID, String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\CreatePlayer.cs:line 58
+2024-06-21 20:35:55,887 - Json Response Error:{"code":"VALIDATION_FAILED","message":"must NOT have more than 2 characters"}
+2024-06-21 20:41:20,695 - CheckExisitingUserSystem.Net.WebException: The remote server returned an error: (400) Bad Request.
+   at System.Net.HttpWebRequest.GetResponse()
+   at NetExamMotrainIntergration.CreatePlayer.CreateMotrainPlayer(String teamID, String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country)
+2024-06-21 20:41:20,705 - Json Response Error:{"code":"VALIDATION_FAILED","message":"must NOT have more than 2 characters"}
+2024-06-21 20:42:53,656 - GetMotrainCourses --
+2024-06-21 20:44:49,323 - GetMotrainCourses --
+2024-06-21 20:51:01,390 - GetMotrainCourses --
+2024-06-21 20:52:13,547 - CheckExisitingUserSystem.ArgumentException: Stream was not writable.
+   at System.IO.StreamWriter..ctor(Stream stream, Encoding encoding, Int32 bufferSize, Boolean leaveOpen)
+   at System.IO.StreamWriter..ctor(Stream stream)
+   at NetExamMotrainIntergration.CreatePlayer.CreateMotrainPlayer(String teamID, String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\CreatePlayer.cs:line 78
+2024-06-21 20:52:13,558 - System.ArgumentException: Stream was not writable.
+   at System.IO.StreamWriter..ctor(Stream stream, Encoding encoding, Int32 bufferSize, Boolean leaveOpen)
+   at System.IO.StreamWriter..ctor(Stream stream)
+   at NetExamMotrainIntergration.CreatePlayer.CreateMotrainPlayer(String teamID, String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\CreatePlayer.cs:line 104
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.ProcessMotrainAPI(String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\NetExamMortrainIntegration.cs:line 165
+2024-06-21 20:52:13,585 - System.ArgumentException: Stream was not writable.
+   at System.IO.StreamWriter..ctor(Stream stream, Encoding encoding, Int32 bufferSize, Boolean leaveOpen)
+   at System.IO.StreamWriter..ctor(Stream stream)
+   at NetExamMotrainIntergration.CreatePlayer.CreateMotrainPlayer(String teamID, String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\CreatePlayer.cs:line 104
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.ProcessMotrainAPI(String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\NetExamMortrainIntegration.cs:line 206
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.GetMotrainCourses() in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\NetExamMortrainIntegration.cs:line 99

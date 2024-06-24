@@ -18,9 +18,25 @@ namespace NetExamMotrainIntergration
         //API endpoint URL
         private static string motrainAPIEndPoint = ConfigurationSettings.AppSettings["MotrainAPIEndPoint"];
         private static string requestBody;
-        //private static JObject createdPlayerDetails = new JObject();
-        
-        public string CreateMotrainPlayer(string teamID, string userID, int iCSID, int motrainStatus, int coins, string email, string firstName, string lastName
+
+
+        ///Create motrain player according to the netexam users <summary>
+        /// </summary>
+        /// <param name="teamID"></param>
+        /// <param name="userID"></param>
+        /// <param name="iCSID"></param>
+        /// <param name="motrainStatus"></param>
+        /// <param name="coins"></param>
+        /// <param name="email"></param>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="adderss1"></param>
+        /// <param name="adderss2"></param>
+        /// <param name="city"></param>
+        /// <param name="state"></param>
+        /// <param name="country"></param>
+        /// <returns>createdPlayerDetails JSON String array</returns>
+        public string CreateMotrainPlayer(string teamID, string email, string firstName, string lastName
                                         , string adderss1, string adderss2, string city, string state, string country)
         {
             
@@ -45,22 +61,6 @@ namespace NetExamMotrainIntergration
                         country = country
                     }
                 };
-               
-                //string jsonRequestBody = "{\"firstname\":\"" + firstName + "\"," +
-                //                        "\"lastname\":\"" + lastName + "\"," +
-                //                        "\"email\":\"" + email + "\"," +
-                //                        "\"shipping\":{\"location_name\":\"\"," +
-                //                                     "\"location_id\":\"\"," +
-                //                                     "\"address_line_1\":\"" + adderss1 + "\"," +
-                //                                     "\"address_line_2\":\"" + adderss2 + "\"," +
-                //                                     "\"city\":\"" + city + "\"," +
-                //                                     "\"postcode\":\"\"," +
-                //                                     "\"state\":\"" + state + "\"," +
-                //                                     "\"country\":\"" + country + "\"}" +
-                //                                     "}";
-
-
-
                 string jsonPayload = JsonConvert.SerializeObject(requestBody);
 
                 string requestcreatePlayerAPIUrl = $"{motrainAPIEndPoint}/teams/{teamID}/users";

@@ -13,6 +13,12 @@ namespace NetExamMotrainIntergration
     {
         //API endpoint URL
         private static string motrainAPIEndPoint = ConfigurationSettings.AppSettings["MotrainAPIEndPoint"];
+        /// <summary>
+        /// Check the mortrain player is existong or not according to the netexam user
+        /// </summary>
+        /// <param name="teamID"></param>
+        /// <param name="email"></param>
+        /// <returns>existingUserMail</returns>
         public string CheckExistingPlayer(string teamID, string email)
         {
             
@@ -21,7 +27,7 @@ namespace NetExamMotrainIntergration
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "GET";
             httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Bearer " + NetExamMortrainIntegration.motrainAPIKey);
-            var existingUserMail = string.Empty;
+            var existingUserMail = "";
             try
             {
 
@@ -40,6 +46,7 @@ namespace NetExamMotrainIntergration
                         }
                     }
                 }
+                return existingUserMail;
             }
             catch (Exception ex)
             {
@@ -47,7 +54,7 @@ namespace NetExamMotrainIntergration
                 NetExamMotrainFileGeneration.Logger.Error("CheckExisitingUser" + error);
                 throw;
             }
-            return existingUserMail;
+            
         }
     }
 }

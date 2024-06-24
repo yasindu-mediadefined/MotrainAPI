@@ -47,7 +47,7 @@ namespace NetExamMotrainIntergration
 
 
         /// <summary>
-        /// The main entry point for the application.
+        /// The main entry point for the motrain application.
         /// </summary>
         [STAThread]
         static void Main(string[] args)
@@ -55,7 +55,6 @@ namespace NetExamMotrainIntergration
             
             
             log4net.Config.XmlConfigurator.Configure();
-            //int iCompany = 11299;
             //Get the users and courses who completed the courses
             GetMotrainCourses();
         }
@@ -63,7 +62,7 @@ namespace NetExamMotrainIntergration
         /// <summary>
         /// Return users and courses who completed courses
         /// </summary>
-        /// <param name="iCompany"></param>
+       
         private static void GetMotrainCourses()
         {
             try
@@ -76,13 +75,12 @@ namespace NetExamMotrainIntergration
                 string address1 = string.Empty, address2 = string.Empty, city = string.Empty, state = string.Empty, country=string.Empty;
                 using (SqlConnection conn = new SqlConnection(connectionString)) 
                 {
-                    NetExamMotrainFileGeneration.Logger.Debug("GetMotrainCourses --");
+                    NetExamMotrainFileGeneration.Logger.Debug("GetMotrainCourses -- Begin");
 
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand("APIGetMotrainCourses", conn))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-                        //cmd.Parameters.Add("@CompanyID", SqlDbType.Int).Value = iCompany;
 
                         SqlDataReader dreader = cmd.ExecuteReader();
 
@@ -105,6 +103,7 @@ namespace NetExamMotrainIntergration
 
                                 if (MotrainStatus == 0)
                                 {
+                                    //process the motrain API from here
                                     ProcessMotrainAPI(UserID,iCSID,MotrainStatus, coursePoins, email,firstName,lastName
                                         , address1, address2, city,state,country);
                                 }
@@ -126,17 +125,33 @@ namespace NetExamMotrainIntergration
             }
         }
 
-        private static void ProcessMotrainAPI(string userID, int iCSID, int motrainStatus, int coursePoins, string email, string firstName, string lastName
+        /// <summary>
+        /// Connecting with Motrain API end points
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <param name="iCSID"></param>
+        /// <param name="motrainStatus"></param>
+        /// <param name="coursePoints"></param>
+        /// <param name="email"></param>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="adderss1"></param>
+        /// <param name="adderss2"></param>
+        /// <param name="city"></param>
+        /// <param name="state"></param>
+        /// <param name="country"></param>
+        private static void ProcessMotrainAPI(string userID, int iCSID, int motrainStatus, int coursePoints, string email, string firstName, string lastName
                                         , string adderss1, string adderss2, string city, string state, string country)
         {
             
             try
             {
+                //Check the available Motrain teams
                 var httpTeamWebRequest = (HttpWebRequest)WebRequest.Create(motrianRequestTeamAPIUrl);
                 httpTeamWebRequest.ContentType = "application/json";
                 httpTeamWebRequest.Method = "GET";
                 var motrainTeamAPIresult = string.Empty;
-                var existingPlayer = string.Empty;
+                var existingPlayer = "";
                 var createdPlayerDtails ="";
                 var awardCoinstoMotrainPlayer = "";
                 //string createdPlayerDtails = new JObject();
@@ -150,9 +165,9 @@ namespace NetExamMotrainIntergration
                         {
                             using (var readerData = new StreamReader(motrainTeamResponse.GetResponseStream()))
                             {
-                                //API response
+                                //Motrain teams API response
                                 motrainTeamAPIresult = readerData.ReadToEnd();
-                                // JSON array string into a JArray object.
+                                // JSON array string into a JArray object
                                 JArray teamArray = JArray.Parse(motrainTeamAPIresult);
                                 //creates an empty JSON object
                                 JObject jsonObject = new JObject();
@@ -160,35 +175,37 @@ namespace NetExamMotrainIntergration
                                 foreach (JObject item in teamArray)
                                 {
                                     teamID = item["id"].ToString();
-                                    //calling seperate web method to get exisiting users
+                                    //Check Existing Motrain Player
                                     existingPlayer = checkPlayer.CheckExistingPlayer(teamID,email);
-                                    // Deserialize using Newtonsoft.Json
-                                    List<Player> existingPlayerList = JsonConvert.DeserializeObject<List<Player>>(existingPlayer);
-                                    if (existingPlayerList.Count == 0)
+                                    // Parse the JSON string array to json array
+                                    JArray jsonExistingPlayerArray = JArray.Parse(existingPlayer);
+                                    
+                                    
+                                    
+                                    if (jsonExistingPlayerArray.Count == 0)
                                     {
-                                        //calling seperate web method to post new users
-                                        createdPlayerDtails = createPlayer.CreateMotrainPlayer(teamID, userID, iCSID, motrainStatus, coursePoins, email, firstName, lastName
+                                        //Create New Motrain Player
+                                        createdPlayerDtails = createPlayer.CreateMotrainPlayer(teamID, email, firstName, lastName
                                             , adderss1, adderss2, city, state, country);
                                        
                                         // Convert JSON string to JObject
                                         JObject jsonObjectCreatePlayer = JsonConvert.DeserializeObject<JObject>(createdPlayerDtails);
-
-                                        // Accessing values
-                                        
                                         motrainPlayerUserID = jsonObjectCreatePlayer["id"].ToString();
-                                        motrainPlayerCoins = (int)jsonObjectCreatePlayer["coins"];
-                                        awardCoinstoMotrainPlayer = awardCoins.AwardCoinstoMotrainPlayer(motrainPlayerUserID, coursePoins);
-                                        if (awardCoinstoMotrainPlayer.Length >0)
+                                        //Awards coins to Motrain Newly Player
+                                        awardCoinstoMotrainPlayer = awardCoins.AwardCoinstoMotrainPlayer(motrainPlayerUserID, coursePoints);
+                                        if (awardCoinstoMotrainPlayer.Length > 0)
                                         {
                                             using (SqlConnection conn = new SqlConnection(connectionString))
                                             {
                                                 conn.Open();
+                                                //Update Motrain table
                                                 using (SqlCommand cmd = new SqlCommand("UpdateMotrainStatus", conn))
                                                 {
                                                     cmd.CommandType = CommandType.StoredProcedure;
                                                     cmd.Parameters.Add("@motrainStatus", SqlDbType.Int).Value = 1;
                                                     cmd.Parameters.Add("@UserID", SqlDbType.Text).Value = userID;
                                                     cmd.Parameters.Add("@iCSID", SqlDbType.Int).Value = iCSID;
+                                                    cmd.Parameters.Add("@motrainPlayerUserID", SqlDbType.Text).Value = motrainPlayerUserID;
 
                                                     SqlDataReader dreader = cmd.ExecuteReader();
 
@@ -206,38 +223,43 @@ namespace NetExamMotrainIntergration
                                     }
                                     else
                                     {
-                                        JObject jsonObjectExistingPlayer = JsonConvert.DeserializeObject<JObject>(existingPlayer);
-                                        motrainPlayerCoins = (int)jsonObjectExistingPlayer["coins"];
-                                        motrainPlayerUserID = jsonObjectExistingPlayer["id"].ToString();
-                                        awardCoinstoMotrainPlayer = awardCoins.AwardCoinstoMotrainPlayer(motrainPlayerUserID, coursePoins);
-                                        if (awardCoinstoMotrainPlayer.Length > 0)
+                                        foreach (JObject existingPlayerObject in jsonExistingPlayerArray)
                                         {
-                                            using (SqlConnection conn = new SqlConnection(connectionString))
+
+                                            motrainPlayerUserID = existingPlayerObject["id"].ToString();
+                                            //Awards coins to Motrain Newly Player
+                                            awardCoinstoMotrainPlayer = awardCoins.AwardCoinstoMotrainPlayer(motrainPlayerUserID, coursePoints);
+                                            if (awardCoinstoMotrainPlayer.Length > 0)
                                             {
-                                                conn.Open();
-                                                using (SqlCommand cmd = new SqlCommand("UpdateMotrainStatus", conn))
+                                                using (SqlConnection conn = new SqlConnection(connectionString))
                                                 {
-                                                    cmd.CommandType = CommandType.StoredProcedure;
-                                                    cmd.Parameters.Add("@motrainStatus", SqlDbType.Int).Value = 1;
-                                                    cmd.Parameters.Add("@UserID", SqlDbType.Text).Value = userID;
-                                                    cmd.Parameters.Add("@iCSID", SqlDbType.Int).Value = iCSID;
-
-                                                    SqlDataReader dreader = cmd.ExecuteReader();
-
-                                                    if (dreader.Read())
+                                                    conn.Open();
+                                                    //Update Motrain table
+                                                    using (SqlCommand cmd = new SqlCommand("UpdateMotrainStatus", conn))
                                                     {
-                                                        string finalresult = dreader["result"].ToString();
+                                                        cmd.CommandType = CommandType.StoredProcedure;
+                                                        cmd.Parameters.Add("@motrainStatus", SqlDbType.Int).Value = 1;
+                                                        cmd.Parameters.Add("@UserID", SqlDbType.Text).Value = userID;
+                                                        cmd.Parameters.Add("@iCSID", SqlDbType.Int).Value = iCSID;
+                                                        cmd.Parameters.Add("@motrainPlayerUserID", SqlDbType.Text).Value = motrainPlayerUserID;
 
+                                                        SqlDataReader dreader = cmd.ExecuteReader();
+
+                                                        if (dreader.Read())
+                                                        {
+                                                            string finalresult = dreader["result"].ToString();
+
+                                                        }
+                                                        dreader.Close();
                                                     }
-                                                    dreader.Close();
+                                                    conn.Close();
                                                 }
-                                                conn.Close();
-                                            }
 
+                                            }
                                         }
 
                                     }
-                                    jsonObject[teamID] = item;
+                                   
                                 }
 
                                 //string resultJson = jsonObject.ToString();
