@@ -12,6 +12,8 @@ using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 using System.Text.Json.Nodes;
 using System.Linq;
+using Elasticsearch.Net;
+using System.Windows.Input;
 
 namespace NetExamMotrainIntergration
 {
@@ -40,8 +42,8 @@ namespace NetExamMotrainIntergration
         private static CheckPlayer checkPlayer = new CheckPlayer();
         private static CreatePlayer createPlayer = new CreatePlayer();
         private static AwardCoins awardCoins = new AwardCoins();
-        private static int mortrainPlayerCoins;
-        private static string mortrainPlayerUserID;
+        private static int motrainPlayerCoins;
+        private static string motrainPlayerUserID;
 
 
         /// <summary>
@@ -69,7 +71,7 @@ namespace NetExamMotrainIntergration
                 string UserID = string.Empty;
                 int iCSID;
                 int MotrainStatus;
-                int coins;
+                int coursePoins;
                 string firstName = string.Empty, lastName = string.Empty, email =string.Empty;
                 string address1 = string.Empty, address2 = string.Empty, city = string.Empty, state = string.Empty, country=string.Empty;
                 using (SqlConnection conn = new SqlConnection(connectionString)) 
@@ -91,7 +93,7 @@ namespace NetExamMotrainIntergration
                                 UserID = dreader["UserID"].ToString();
                                 iCSID = int.Parse(dreader["iCSID"].ToString());
                                 MotrainStatus = int.Parse(dreader["MotrainStatus"].ToString());
-                                coins = int.Parse(dreader["points"].ToString());
+                                coursePoins = int.Parse(dreader["points"].ToString());
                                 email = dreader["email"].ToString();
                                 firstName = dreader["fname"].ToString();
                                 lastName = dreader["lname"].ToString();
@@ -103,7 +105,7 @@ namespace NetExamMotrainIntergration
 
                                 if (MotrainStatus == 0)
                                 {
-                                    ProcessMotrainAPI(UserID,iCSID,MotrainStatus,coins,email,firstName,lastName
+                                    ProcessMotrainAPI(UserID,iCSID,MotrainStatus, coursePoins, email,firstName,lastName
                                         , address1, address2, city,state,country);
                                 }
                             }
@@ -124,7 +126,7 @@ namespace NetExamMotrainIntergration
             }
         }
 
-        private static void ProcessMotrainAPI(string userID, int iCSID, int motrainStatus, int coins, string email, string firstName, string lastName
+        private static void ProcessMotrainAPI(string userID, int iCSID, int motrainStatus, int coursePoins, string email, string firstName, string lastName
                                         , string adderss1, string adderss2, string city, string state, string country)
         {
             
@@ -165,7 +167,7 @@ namespace NetExamMotrainIntergration
                                     if (existingPlayerList.Count == 0)
                                     {
                                         //calling seperate web method to post new users
-                                        createdPlayerDtails = createPlayer.CreateMotrainPlayer(teamID, userID, iCSID, motrainStatus, coins, email, firstName, lastName
+                                        createdPlayerDtails = createPlayer.CreateMotrainPlayer(teamID, userID, iCSID, motrainStatus, coursePoins, email, firstName, lastName
                                             , adderss1, adderss2, city, state, country);
                                        
                                         // Convert JSON string to JObject
@@ -173,17 +175,67 @@ namespace NetExamMotrainIntergration
 
                                         // Accessing values
                                         
-                                        mortrainPlayerUserID = jsonObjectCreatePlayer["id"].ToString();
-                                        mortrainPlayerCoins = (int)jsonObjectCreatePlayer["coins"];
-                                        awardCoinstoMotrainPlayer = awardCoins.AwardCoinstoMotrainPlayer(mortrainPlayerUserID, mortrainPlayerCoins);
+                                        motrainPlayerUserID = jsonObjectCreatePlayer["id"].ToString();
+                                        motrainPlayerCoins = (int)jsonObjectCreatePlayer["coins"];
+                                        awardCoinstoMotrainPlayer = awardCoins.AwardCoinstoMotrainPlayer(motrainPlayerUserID, coursePoins);
+                                        if (awardCoinstoMotrainPlayer.Length >0)
+                                        {
+                                            using (SqlConnection conn = new SqlConnection(connectionString))
+                                            {
+                                                conn.Open();
+                                                using (SqlCommand cmd = new SqlCommand("UpdateMotrainStatus", conn))
+                                                {
+                                                    cmd.CommandType = CommandType.StoredProcedure;
+                                                    cmd.Parameters.Add("@motrainStatus", SqlDbType.Int).Value = 1;
+                                                    cmd.Parameters.Add("@UserID", SqlDbType.Text).Value = userID;
+                                                    cmd.Parameters.Add("@iCSID", SqlDbType.Int).Value = iCSID;
+
+                                                    SqlDataReader dreader = cmd.ExecuteReader();
+
+                                                    if (dreader.Read())
+                                                    {
+                                                        string finalresult = dreader["result"].ToString();
+
+                                                    }
+                                                    dreader.Close();
+                                                }
+                                                conn.Close();
+                                            }
+
+                                        }
                                     }
                                     else
                                     {
                                         JObject jsonObjectExistingPlayer = JsonConvert.DeserializeObject<JObject>(existingPlayer);
-                                        mortrainPlayerCoins = (int)jsonObject["coins"];
-                                        mortrainPlayerUserID = jsonObject["id"].ToString();
-                                       
-                                        
+                                        motrainPlayerCoins = (int)jsonObjectExistingPlayer["coins"];
+                                        motrainPlayerUserID = jsonObjectExistingPlayer["id"].ToString();
+                                        awardCoinstoMotrainPlayer = awardCoins.AwardCoinstoMotrainPlayer(motrainPlayerUserID, coursePoins);
+                                        if (awardCoinstoMotrainPlayer.Length > 0)
+                                        {
+                                            using (SqlConnection conn = new SqlConnection(connectionString))
+                                            {
+                                                conn.Open();
+                                                using (SqlCommand cmd = new SqlCommand("UpdateMotrainStatus", conn))
+                                                {
+                                                    cmd.CommandType = CommandType.StoredProcedure;
+                                                    cmd.Parameters.Add("@motrainStatus", SqlDbType.Int).Value = 1;
+                                                    cmd.Parameters.Add("@UserID", SqlDbType.Text).Value = userID;
+                                                    cmd.Parameters.Add("@iCSID", SqlDbType.Int).Value = iCSID;
+
+                                                    SqlDataReader dreader = cmd.ExecuteReader();
+
+                                                    if (dreader.Read())
+                                                    {
+                                                        string finalresult = dreader["result"].ToString();
+
+                                                    }
+                                                    dreader.Close();
+                                                }
+                                                conn.Close();
+                                            }
+
+                                        }
+
                                     }
                                     jsonObject[teamID] = item;
                                 }

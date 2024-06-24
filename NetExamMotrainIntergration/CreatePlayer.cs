@@ -69,25 +69,7 @@ namespace NetExamMotrainIntergration
                 httpPlayerWebRequest.Method = "POST";
                 httpPlayerWebRequest.Headers.Add(HttpRequestHeader.Authorization, "Bearer " + NetExamMortrainIntegration.motrainAPIKey);
                 var createdPlayerDetails = "";
-                //httpPlayerWebRequest.ContentLength = data.Length;
-
-                // Write the request body
-                //using (var stream = httpPlayerWebRequest.GetRequestStream())
-                //{
-                //    stream.Write(data, 0, data.Length);
-                //}
-
-                // Read and log the request body before sending it
-
-                //using (var stream = new MemoryStream())
-                //{
-                //    stream.Write(data, 0, data.Length);
-                //    stream.Position = 0;
-                //    using (var reader = new StreamReader(stream))
-                //    {
-                //        requestBody = reader.ReadToEnd();
-                //    }
-                //}
+                
                 using (var streamWriter = new StreamWriter(httpPlayerWebRequest.GetRequestStream()))
                 {
                     streamWriter.Write(jsonPayload);

@@ -56,3 +56,77 @@ Object name: 'System.Net.HttpWebResponse'.
    at System.Net.HttpWebRequest.GetResponse()
    at NetExamMotrainIntergration.AwardCoins.AwardCoinstoMotrainPlayer(String motrainUserID, Int32 motrainCoins) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\AwardCoins.cs:line 74
 2024-06-24 11:14:21,425 - GetMotrainCourses --
+2024-06-24 11:21:03,310 - GetMotrainCourses --
+2024-06-24 11:33:35,315 - GetMotrainCourses --
+2024-06-24 11:37:03,776 - AwardCoinstoMotrainPlayer{"code":"UNCLASSIFIED_ERROR","message":"Unexpected token , in JSON at position 80"}
+2024-06-24 11:37:03,792 - AwardCoinstoMotrainPlayerSystem.Net.WebException: The remote server returned an error: (500) Internal Server Error.
+   at System.Net.HttpWebRequest.GetResponse()
+   at NetExamMotrainIntergration.AwardCoins.AwardCoinstoMotrainPlayer(String motrainUserID, Int32 motrainCoins)
+2024-06-24 11:37:03,810 - System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.HttpWebResponse'.
+   at System.Net.HttpWebResponse.CheckDisposed()
+   at System.Net.HttpWebResponse.GetResponseStream()
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.ProcessMotrainAPI(String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country)
+2024-06-24 11:37:03,831 - System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.HttpWebResponse'.
+   at System.Net.HttpWebResponse.CheckDisposed()
+   at System.Net.HttpWebResponse.GetResponseStream()
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.ProcessMotrainAPI(String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country)
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.GetMotrainCourses()
+2024-06-24 11:40:40,541 - GetMotrainCourses --
+2024-06-24 11:45:04,008 - GetMotrainCourses --
+2024-06-24 11:47:17,872 - AwardCoinstoMotrainPlayer{"code":"VALIDATION_FAILED","message":"must be integer"}
+2024-06-24 11:47:17,889 - AwardCoinstoMotrainPlayerSystem.Net.WebException: The remote server returned an error: (400) Bad Request.
+   at System.Net.HttpWebRequest.GetResponse()
+   at NetExamMotrainIntergration.AwardCoins.AwardCoinstoMotrainPlayer(String motrainUserID, Int32 motrainCoins) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\AwardCoins.cs:line 72
+2024-06-24 11:47:17,906 - System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.HttpWebResponse'.
+   at System.Net.HttpWebResponse.CheckDisposed()
+   at System.Net.HttpWebResponse.GetResponseStream()
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.ProcessMotrainAPI(String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\NetExamMortrainIntegration.cs:line 206
+2024-06-24 11:47:17,927 - System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.HttpWebResponse'.
+   at System.Net.HttpWebResponse.CheckDisposed()
+   at System.Net.HttpWebResponse.GetResponseStream()
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.ProcessMotrainAPI(String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country) in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\NetExamMortrainIntegration.cs:line 221
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.GetMotrainCourses() in D:\MD-Yasindu\NetExamV6Projects\Local\NetExam APIs\NetExamMotrainIntergration\NetExamMotrainIntergration\NetExamMortrainIntegration.cs:line 106
+2024-06-24 11:51:15,417 - GetMotrainCourses --
+2024-06-24 11:55:08,687 - GetMotrainCourses --
+2024-06-24 11:56:41,881 - GetMotrainCourses --
+2024-06-24 11:58:06,260 - Json Response:[
+  {
+    "id": "519d184e-4c34-4c4a-b520-31d1057ff215",
+    "account_id": "580b06e3-fe64-435a-a207-3cc58fa6791c",
+    "name": "Default team",
+    "tickets_enabled": false
+  }
+]
+2024-06-24 11:58:48,953 - Newtonsoft.Json.JsonSerializationException: Deserialized JSON type 'Newtonsoft.Json.Linq.JArray' is not compatible with expected type 'Newtonsoft.Json.Linq.JObject'. Path '', line 1, position 555.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateJToken(JsonReader reader, JsonContract contract)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.ProcessMotrainAPI(String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country)
+2024-06-24 11:58:48,984 - Newtonsoft.Json.JsonSerializationException: Deserialized JSON type 'Newtonsoft.Json.Linq.JArray' is not compatible with expected type 'Newtonsoft.Json.Linq.JObject'. Path '', line 1, position 555.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateJToken(JsonReader reader, JsonContract contract)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.ProcessMotrainAPI(String userID, Int32 iCSID, Int32 motrainStatus, Int32 coins, String email, String firstName, String lastName, String adderss1, String adderss2, String city, String state, String country)
+   at NetExamMotrainIntergration.NetExamMortrainIntegration.GetMotrainCourses()
+2024-06-24 12:35:31,799 - GetMotrainCourses --
+2024-06-24 12:41:59,851 - Json Response:[
+  {
+    "id": "519d184e-4c34-4c4a-b520-31d1057ff215",
+    "account_id": "580b06e3-fe64-435a-a207-3cc58fa6791c",
+    "name": "Default team",
+    "tickets_enabled": false
+  }
+]
+2024-06-24 13:01:18,372 - GetMotrainCourses --
